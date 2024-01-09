@@ -70,6 +70,11 @@ input {
   margin-bottom: 20px;
 }
 
+input[type="radio"] {
+  width: fit-content;
+  height: 1rem;
+}
+
 label {
   font-size: 20px;
   margin-bottom: 5px;

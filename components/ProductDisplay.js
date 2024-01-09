@@ -49,6 +49,8 @@ app.component('product-display', {
             Add to Cart
           </button>
           <button class="button" @click="removeFromCart">Remove From Cart</button>
+          <review-list v-if="reviews.length" :reviews="reviews"></review-list>
+          <review-form @review-submitted="addReview"></review-form>
         </div>
       </div>
     </div>
@@ -77,6 +79,7 @@ app.component('product-display', {
       ],
       onSale: true,
       sizes: [35, 36, 37, 38, 39, 40],
+      reviews: [],
     });
   },
   methods: {
@@ -89,6 +92,9 @@ app.component('product-display', {
     updateVariant(index) {
       this.selectedVariant = index;
     },
+    addReview(review) {
+      this.reviews.push(review);
+    }
   },
   computed: {
     title() {
